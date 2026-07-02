@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Gestion des Utilisateurs - Interface Futuriste</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Background Animation -->
+        <div class="background-animation"></div>
+        <div class="floating-particles"></div>
+        
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">
+                <span class="title-icon">🎯</span>
+                <span class="title-text">Gestion des Utilisateurs</span>
+            </h1>
+            <p class="subtitle">Interface futuriste et intuitive</p>
+        </header>
+        
+        <!-- Form Section -->
+        <div class="form-card">
+            <div class="form-header">
+                <h2 class="form-title">
+                    <span class="form-icon">➕</span>
+                    Ajouter un nouvel utilisateur
+                </h2>
+                <button class="toggle-btn" id="toggle-form">
+                    <span class="toggle-text">Afficher</span> le formulaire
+                </button>
+            </div>
+            
+   <form id="user-form" class="user-form">
+    <div class="input-group">
+        <div class="input-wrapper">
+            <input type="text" id="name" placeholder="Nom complet" required />
+            <div class="input-glow"></div>
+        </div>
+
+        <div class="input-wrapper">
+            <input type="email" id="email" placeholder="Adresse email" required />
+            <div class="input-glow"></div>
+        </div>
+
+        <div class="input-wrapper file-input-wrapper">
+            <button type="button" id="photo-button" class="btn btn-photo">Choisir une photo</button>
+            <span id="photo-filename" class="photo-filename">Aucune photo sélectionnée</span>
+            <input type="file" id="photo" accept="image/*" class="hidden-file-input" />
+            <div class="input-glow"></div>
+        </div>
+
+        <div class="input-wrapper">
+            <input type="text" id="description" placeholder="Description" />
+            <div class="input-glow"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            <span class="btn-text">Ajouter</span>
+            <div class="btn-glow"></div>
+        </button>
+    </div>
+</form>
+        </div>
+        
+        <!-- Search Section -->
+        <div class="search-container">
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" placeholder="Rechercher un utilisateur..." />
+                <div class="search-glow"></div>
+            </div>
+        </div>
+        
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stats-card">
+                <span class="stats-icon">📊</span>
+                <span class="stats-text">Total: <span id="user-count">0</span> utilisateur(s)</span>
+                <span class="stats-search" id="search-stats"></span>
+            </div>
+        </div>
+        
+        <!-- Loading State -->
+        <div id="loading" class="loading">
+            <div class="loading-spinner"></div>
+            <span class="loading-text">Chargement en cours...</span>
+        </div>
+        
+        <!-- Empty State -->
+        <div id="empty-state" class="empty-state" style="display: none;">
+            <div class="empty-icon">📭</div>
+            <div class="empty-text" id="empty-text">
+                Aucun utilisateur trouvé. Ajoutez-en un ci-dessus !
+            </div>
+        </div>
+        
+        <!-- User List -->
+        <div id="user-list" class="user-list"></div>
+        
+        <!-- Success/Error Messages -->
+        <div id="message-container" class="message-container"></div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
